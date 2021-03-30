@@ -11,9 +11,23 @@ function Menu(){
             </nav>
     )
 }
+function MainPage(){
+    return(
+        <div className='container-sm my-5'>
+        <h2>Добропожаловать на главную страницу!</h2>
+        </div>
+    )
+}
+function AboutUs(){
+    return(
+        <div className='container-sm my-5'>
+            <h2>На этой странице будет размещена информации о нас, но чуть позже. Наберитесь терперия!</h2>
+        </div>
+    )
+}
 function ContactUs(){
     return (
-        <div className='container-sm my-1'>
+        <div className='container-sm my-5'>
             <div className="mb-3"><input type="text" className="form-control"/></div>
             <div className="mb-3"><input type="text" className='form-control'/></div>
             <div className="mb-3"><textarea type="text" className='form-control'/></div>
@@ -27,8 +41,8 @@ function App() {
     <div className="App">
         <BrowserRouter>
             <Menu/>
-            <Route exact path='/' render={()=><h3>Главная страница</h3>} />
-            <Route path='/about' render={()=><h3>О нас</h3>} />
+            <Route exact path='/' render={()=><MainPage/>} />
+            <Route path='/about' render={()=><AboutUs/>} />
             <Route path='/contact-us' render={()=><ContactUs/>} />
         </BrowserRouter>
     </div>
