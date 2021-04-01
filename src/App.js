@@ -1,16 +1,10 @@
 import './App.css';
 import React from 'react';
-import {Route, BrowserRouter, NavLink} from "react-router-dom"
-function Menu(){
-    return(
+import {Route, BrowserRouter, NavLink} from "react-router-dom";
+import {Menu} from "./components/Menu";
+import {PostList} from "./components/PostList";
+import {ViewPost} from "./components/Post";
 
-            <nav className="nav">
-                <NavLink className="nav-link active" aria-current="page" to="/">Главная</NavLink>
-                <NavLink className="nav-link" to="/about">О нас</NavLink>
-                <NavLink className="nav-link" to="/contact-us">Контакты</NavLink>
-            </nav>
-    )
-}
 function MainPage(){
     return(
         <div className='container-sm my-5'>
@@ -36,14 +30,16 @@ function ContactUs(){
     )
 }
 
+
 function App() {
   return (
-    <div className="App">
+    <div className="container">
         <BrowserRouter>
             <Menu/>
-            <Route exact path='/' render={()=><MainPage/>} />
+            <Route exact path='/' render={()=><PostList/>} />
             <Route path='/about' render={()=><AboutUs/>} />
             <Route path='/contact-us' render={()=><ContactUs/>} />
+            <Route path='/post' render={()=><ViewPost/>} />
         </BrowserRouter>
     </div>
   );
