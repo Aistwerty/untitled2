@@ -7,6 +7,7 @@ export function Menu() {
         <nav className="nav">
             <NavLink className="nav-link active" aria-current="page" to="/">Главная</NavLink>
             <NavLink className="nav-link" to="/about">О нас</NavLink>
+            <NavLink className="nav-link" to="/addpost">Добавить стаью</NavLink>
             <NavLink className="nav-link" to="/contact-us">Контакты</NavLink>
         </nav>
     )

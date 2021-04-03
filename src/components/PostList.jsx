@@ -26,6 +26,7 @@ export class PostList extends React.Component{
                 let rows = []
                 for (let i = 0; i < result.length; i++) {
                     rows.push(<Tr
+                        key={i}
                         index={i+1}
                         title={result[i].title}
                         author={result[i].author}

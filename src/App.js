@@ -4,6 +4,7 @@ import {Route, BrowserRouter, NavLink} from "react-router-dom";
 import {Menu} from "./components/Menu";
 import {PostList} from "./components/PostList";
 import {ViewPost} from "./components/Post";
+import {AddPost} from "./components/AddPost";
 
 function MainPage(){
     return(
@@ -40,6 +41,7 @@ function App() {
             <Route path='/about' render={()=><AboutUs/>} />
             <Route path='/contact-us' render={()=><ContactUs/>} />
             <Route path='/post' render={()=><ViewPost/>} />
+            <Route path='/addpost' render={()=><AddPost/>} />
         </BrowserRouter>
     </div>
   );
