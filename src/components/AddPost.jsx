@@ -22,7 +22,7 @@ export class AddPost extends React.Component{
             body: formData
         }).then(response=>response.json())
             .then(result=>
-                console.log(result)
+                console.log(result.result)
             )
     }
     handleInputChange(event){
@@ -52,7 +52,6 @@ export class AddPost extends React.Component{
         this.setState({
             [name]:value
         })
-
     }
 
     render() {
@@ -70,7 +69,7 @@ export class AddPost extends React.Component{
                     <input value={this.state.author} onChange={this.handleInputChange} name="author" type="text" className="form-control" placeholder="Автор"/>
                 </div>
                 <div className="mb-3">
-                    <input type="submit" className="form-control btn btn-primary" value="Добавить"/>
+                    <input type="submit" className="form-control btn btn-info" value="Добавить"/>
                 </div>
             </form>
         </div>

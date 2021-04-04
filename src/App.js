@@ -5,6 +5,9 @@ import {Menu} from "./components/Menu";
 import {PostList} from "./components/PostList";
 import {ViewPost} from "./components/Post";
 import {AddPost} from "./components/AddPost";
+import {ClientAuth} from "./components/Auth";
+import {RegClient} from "./components/RegClient";
+import {ClientCab} from "./components/cabinet";
 
 function MainPage(){
     return(
@@ -26,7 +29,7 @@ function ContactUs(){
             <div className="mb-3"><input type="text" className="form-control"/></div>
             <div className="mb-3"><input type="text" className='form-control'/></div>
             <div className="mb-3"><textarea type="text" className='form-control'/></div>
-            <div className="mb-3"><input type="submit" className='form-control btn btn-light'/></div>
+            <div className="mb-3"><input type="submit" className='form-control btn btn-info'/></div>
         </div>
     )
 }
@@ -42,6 +45,9 @@ function App() {
             <Route path='/contact-us' render={()=><ContactUs/>} />
             <Route path='/post' render={()=><ViewPost/>} />
             <Route path='/addpost' render={()=><AddPost/>} />
+            <Route path='/auth' render={()=><ClientAuth/>} />
+            <Route path='/regclient' render={()=><RegClient/>} />
+            <Route path='/cabinet' render={()=><ClientCab/>} />
         </BrowserRouter>
     </div>
   );
