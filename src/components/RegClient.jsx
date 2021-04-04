@@ -68,7 +68,7 @@ export class RegClient extends React.Component{
     render() {
         return <div className="col-md-5 my-5 mx-auto">
             <h4 className="text-center my-3">Регистрация</h4>
-            <form>
+            <form onSubmit={this.sendForm}>
                 <div className="mb-3">
                     <input value={this.state.name} onChange={this.handleInputChange} name="name" type="text" className="form-control" placeholder="Имя"/>
                 </div>
