@@ -21,7 +21,7 @@ export class RegClient extends React.Component{
         formData.append("email",this.state.email);
         formData.append("pass",this.state.pass);
         console.log(formData);
-        fetch("http://aistwerty.beget.tech/projects/spaTech/php/client_reg.php", {
+        fetch("http://aistwerty.beget.tech/projects/reactTech/php/client_reg.php", {
             method: "POST",
             body: formData
         }).then(response=>response.json())
@@ -35,7 +35,7 @@ export class RegClient extends React.Component{
         if (name === "email") {
             const formData = new FormData();
             formData.append("email", value);
-            fetch("http://aistwerty.beget.tech/projects/spaTech/php/check_email.php", {
+            fetch("http://aistwerty.beget.tech/projects/reactTech/php/check_email.php", {
                 method: "POST",
                 body: formData
             }).then(response => response.json())

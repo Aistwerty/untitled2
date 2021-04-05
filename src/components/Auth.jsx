@@ -35,7 +35,7 @@ export class ClientAuth extends React.Component{
         if (name === "email") {
             const formData  = new FormData();
             formData.append("email",value);
-            fetch("http://aistwerty.beget.tech/projects/spaTech/php/check_email.php",{
+            fetch("http://aistwerty.beget.tech/projects/reactTech/php/check_email.php",{
                 method: "POST",
                 body: formData
             }).then(response=>response.json())

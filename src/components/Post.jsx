@@ -1,34 +1,38 @@
 import React from 'react';
 
 export class ViewPost extends React.Component{
-    constructor() {
-        super();
+    constructor(props) {
+        console.log(props);
+        super(props);
         this.state = {
-            id: "1",
             title: "",
             text: "",
             author: "",
-            date_added: ""
+            data_added: ""
         }
     }
     componentDidMount() {
-        fetch("http://aistwerty.beget.tech/projects/spaTech/php/get_posts.php")
-            .then (response=>response.json())
+        const formData = new FormData();
+        formData.append("id",this.props.match.params.id);
+        fetch("http://aistwerty.beget.tech/projects/reactTech/php/view_post.php", {
+            method: "POST",
+            body: formData
+        }).then (response=>response.json())
             .then (result=>{
-                for (let i = 0; i < 1; i++)
-                    this.setState({
-                        title: result[i].title,
-                        text: result[i].text,
-                        author: result[i].author,
-                        data_added: result[i].data_added
-                    })
+                console.log(result);
+                this.setState({
+                    title: result.title,
+                    text: result.text,
+                    author: result.author,
+                    data_added: result.data_added
+                })
+
             })
     }
 
     render() {
-        console.log("Компонент рисуется");
         return <div>
-            <h1>{this.state.title}</h1>
+            <h3 className="text-center">{this.state.title}</h3>
             <p>{this.state.text}</p>
             <p>Автор: {this.state.author}</p>
             <p>Дата публикации: {this.state.data_added}</p>
@@ -36,31 +40,3 @@ export class ViewPost extends React.Component{
 
     }
 }
-/*
-    constructor() {
-        super();
-        this.state = {
-            id: "id"
-        }
-        componentDidMount() {
-            console.log("Компонет отрисован");
-            fetch("http://aistwerty.beget.tech/projects/spaTech/php/view_post.php")
-                .then(response=>response.json())
-                .then(result=>{
-                    console.log(result);
-                    let rows = []
-                    for (let i = 0; i < result.length; i++) {
-                        rows.push(<Issue
-                            index={i+1}
-                            title={result[i].title}
-                            author={result[i].author}
-                            data_added={result[i].data_added}
-                        />)
-                    }
-                    this.setState({
-                        posts: rows
-                    })
-                })
-        }
-
-}*/
